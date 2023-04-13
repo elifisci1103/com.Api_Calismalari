@@ -5,6 +5,8 @@ import org.json.JSONObject;
 
 public class TestdataJsonPlaceHolder {
     public int basariliStatusCode=200;
+    public String contentType="application/json; charset=utf-8";
+    public String coonectionHeader="keep-alive";
     public JSONObject expectedBodyOlusturJson(){
 
         JSONObject expectedBody=new JSONObject();
@@ -16,4 +18,23 @@ public class TestdataJsonPlaceHolder {
 
         return expectedBody;
     }
-}
+    public JSONObject reqbodyOlustur(){
+        JSONObject reqBody =new JSONObject();
+        reqBody.put("title", "Ahmet");
+        reqBody.put("body","Merhaba");
+        reqBody.put("userId",10);
+        reqBody.put( "id",70);
+     return reqBody;
+    }
+    /*Expected Data :
+    {
+        "title": "Ahmet",
+            "body": "Merhaba",
+            "userId": 10,
+            "id": 70*/
+
+    public JSONObject expectedData(){
+        JSONObject expected = new JSONObject();
+        expected.put("Expected Data",reqbodyOlustur());
+    return expected;
+}}
