@@ -3,6 +3,8 @@ package testData;
 import baseUrl.JsonPlaceHolderBaseUrl;
 import org.json.JSONObject;
 
+import java.util.HashMap;
+
 public class TestdataJsonPlaceHolder {
     public int basariliStatusCode=200;
     public String contentType="application/json; charset=utf-8";
@@ -28,7 +30,7 @@ public class TestdataJsonPlaceHolder {
     }
     /*Expected Data :
     {
-        "title": "Ahmet",
+       title": "Ahmet" ",
             "body": "Merhaba",
             "userId": 10,
             "id": 70*/
@@ -36,5 +38,15 @@ public class TestdataJsonPlaceHolder {
     public JSONObject expectedData(){
         JSONObject expected = new JSONObject();
         expected.put("Expected Data",reqbodyOlustur());
-    return expected;
-}}
+    return expected;}
+
+    public HashMap requestBody(){
+        HashMap<String,Object>reqBody=new HashMap<>();
+        reqBody.put( "title", "Ahmet");
+        reqBody.put("body", "Merhaba");
+        reqBody.put("userId", 10.0);
+        reqBody.put("id", 70.0);
+        return reqBody;
+
+        }
+}
